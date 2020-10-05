@@ -23,7 +23,7 @@ for (let i = 0; i < page; i++) {
 function start() {
   const getPageInfo = (pageItem) => {
     //  设置访问间隔
-    let delay = parseInt((Math.random() * 30000000) % 1000, 10)
+    // let delay = parseInt((Math.random() * 30000000) % 1000, 10)
     pageUrls.forEach(pageUrl => {
       superagent.get(pageUrl.url)
         // 模拟浏览器
@@ -42,7 +42,7 @@ function start() {
             let title = item.eq(0).children('a').text() || '' // 获取标题
             let url = item.eq(0).children('a').attr('href') || '' // 获取详情页链接
             // let author = item.eq(1).children('a').attr('href').replace('https://www.douban.com/people', '').replace(/\//g, '') || ''  // 获取作者id
-            let author = item.eq(1).children('a').text() || '' // 这里改为使用作者昵称而不是id的原因是发现有些中介注册了好多账号，打一枪换个地方。虽然同名也有，但是这么小的数据量下，概率低到忽略不计
+            let author = item.eq(1).children('a').text() || ''
             let markSum = item.eq(2).text() // 获取回应数量
             let lastModify = item.eq(3).text() // 获取最后修改时间
 
