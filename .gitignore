@@ -1,3 +1,4 @@
 .vscode
 /node/rent-house/node_modules
 /python/node_modules
+/python/*/__pycache__
